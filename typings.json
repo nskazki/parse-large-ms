@@ -1,0 +1,14 @@
+{
+  "name": "str2num",
+  "dependencies": {},
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160523035754"
+  },
+  "globalDevDependencies": {
+    "empower": "registry:dt/empower#0.0.0+20160317120654",
+    "lodash": "registry:dt/lodash#3.10.0+20160330154726",
+    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
+    "power-assert": "registry:dt/power-assert#0.0.0+20160316155526",
+    "power-assert-formatter": "registry:dt/power-assert-formatter#0.0.0+20160317120654"
+  }
+}
