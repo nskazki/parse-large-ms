@@ -309,14 +309,20 @@ describe('string arg', () => {
 })
 
 describe('throws', () => {
-  assert.throws(() => pm(NaN as any), 'NaN')
-  assert.throws(() => pm(+Infinity as any), '+Infinity')
-  assert.throws(() => pm(-Infinity as any), '-Infinity')
+  it('not finite number', () => {
+    assert.throws(() => pm(NaN), 'NaN')
+    assert.throws(() => pm(+Infinity), '+Infinity')
+    assert.throws(() => pm(-Infinity), '-Infinity')
+  })
 
-  assert.throws(() => pm([] as any), '[]')
-  assert.throws(() => pm({} as any), '{}')
-  assert.throws(() => pm(/./ as any), '/./')
+  it('wrong type', () => {
+    assert.throws(() => pm([] as any), '[]')
+    assert.throws(() => pm({} as any), '{}')
+    assert.throws(() => pm(/./ as any), '/./')
+  })
 
-  assert.throws(() => pm('123.ee3' as any), '123.ee3')
-  assert.throws(() => pm('.e' as any), '.e')
+  it('bad string', () => {
+    assert.throws(() => pm('123.ee3'), '123.ee3')
+    assert.throws(() => pm('.e'), '.e')
+  })
 })
