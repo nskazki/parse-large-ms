@@ -17,7 +17,7 @@ export interface IMsInfo {
   milliseconds: number
 }
 
-interface IInfoBit {
+export interface IInfoBit {
     name: string,
     msPerBit: number
 }
@@ -39,7 +39,7 @@ const msPerDecade     = msPerYear    * yearsPerDecade
 const msPerCentury    = msPerDecade  * decadesPerCentury
 const msPerMillennium = msPerCentury * centuriesPerMillennium
 
-const bits: Array<IInfoBit> = [
+export const bits: Array<IInfoBit> = [
   { name: 'millenniums',  msPerBit: msPerMillennium },
   { name: 'centuries',    msPerBit: msPerCentury    },
   { name: 'decades',      msPerBit: msPerDecade     },
@@ -90,3 +90,4 @@ function getNumberSign(num: number): number {
 // ES6 Modules default exports interop with CommonJS
 module.exports = parseLargeMs
 module.exports.default = parseLargeMs
+module.exports.bits = bits
